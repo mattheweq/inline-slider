@@ -34,16 +34,21 @@ function moveSlider(e){
 // 
 function parseData(x){
   return `<div class="review">
+  <a href="${x.spotifyUrl}">
     <div class="review-inner">
-      <p>${x.id}</p>
-      <p>${x.title}</p>
+      <img src="${x.artwork}" alt="${x.title}" />
+      <div class="meta">
+        <p class="title">${x.title}</p>
+        <p class="year">${x.year}</p>
+      </div>
     </div>
+  </a>
   </div>`
 }
 // 
 // 
-// const url = "https://matthewviamusic.com/api/tracks"
-const url = "./data.json"
+const url = "https://raw.githubusercontent.com/mvmdiscography/mvmdiscography.github.io/main/data.json"
+
 getData()
 async function getData(){
   await fetch(url)
@@ -54,41 +59,12 @@ async function getData(){
     return res.json()
   })
   .then(data => {
-    reviewsData = data.lemons
-    reviewsDOM.innerHTML = data.lemons.map(parseData).join("")
+    reviewsData = data.music.releases
+    reviewsDOM.innerHTML = reviewsData.map(parseData).join("")
   })
   .catch(error => {
     console.error("There has been a problem with your fetch operation: ", error)
   })
 }
-
-
-
-
-// 
-// 
-// 
-
-function reviewStars(stars){
-  const calculatedStars = []
-  for (let i = 0; i < Math.floor(stars); i++){
-    calculatedStars.push(`<img src="images/full-star-svg">`)
-  }
-  if(stars === 5){
-    return calculatedStars.map(item => item).join("")
-  } 
-  if(Number.isInteger(stars)){
-   for (let i = 0; i < 5 - stars; i++){
-    calculatedStars.push(`<img src="images/empty-star-svg">`)
-    } 
-  } else{
-    calculatedStars.push(`<img src="images/half-star-svg">`)
-    for (let i = 0; i < 4 - Math.floor(stars); i++){
-      calculatedStars.push(`<img src="images/empty-star-svg">`)
-    } 
-  }
-  return calculatedStars.map(item => item).join("")
-}
-
 
 
