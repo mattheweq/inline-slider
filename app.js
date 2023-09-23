@@ -47,7 +47,7 @@ function parseData(x){
 }
 // 
 // 
-const url = "https://raw.githubusercontent.com/mvmdiscography/mvmdiscography.github.io/main/data.json"
+const url = "https://mvmdiscography.github.io/data.json"
 
 getData()
 async function getData(){
