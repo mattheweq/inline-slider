@@ -7,4 +7,4 @@
 
 ![PREVIEW](preview.png)
 
-[LIVE SITE](https://mattheweq.github.io/inline-slider)
+[LIVE SITE](https://mattheweq.com/inline-slider/)
