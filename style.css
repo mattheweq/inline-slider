@@ -9,17 +9,22 @@ body{
 }
 .container{
   position: relative;
-  display: flex;
+  display: flex;;
   align-items: center;
   max-width: 450px;
   margin: 0 auto;
+}
+#test{
+  text-align: center;
+  width: 100%;
+  padding: 10px 0px;
 }
 #arrow--left, #arrow--right{
   position: absolute;
   font-size: 3rem;
   cursor: pointer;
   z-index: 10;
-  margin-top: -100px;
+  margin-top: -60px;
   line-height: 3rem;
   background: #f9f4f1;
   border-radius: 8px;
@@ -38,6 +43,7 @@ body{
 .wrapper {
   position: relative;
   max-width: 450px;
+  width: 95%;
   margin: 0 auto;
   padding: 20px 0 80px;
   overflow: hidden;

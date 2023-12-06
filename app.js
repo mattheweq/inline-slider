@@ -59,7 +59,7 @@ async function getData(){
     return res.json()
   })
   .then(data => {
-    reviewsData = data.music.releases
+    reviewsData = data
     reviewsDOM.innerHTML = reviewsData.map(parseData).join("")
   })
   .catch(error => {
