@@ -1,8 +1,8 @@
-const test = document.getElementById('test')
+// const test = document.getElementById('test')
 
 const arrowLeft = document.getElementById('arrow--left')
 const arrowRight = document.getElementById('arrow--right')
-const reviewsDOM = document.getElementById('reviews')
+const sleevesDOM = document.getElementById('sleeves')
 
 let reviewsData
 let slideIndex = 0
@@ -26,16 +26,16 @@ function moveSlider(e){
   if(e.currentTarget.id.includes("left")) 
     { slideIndex === 0 ? (slideIndex = reviewsData.length - 1) : slideIndex-- }
   
-  reviewsDOM.style.transform = `translate(${-100 * slideIndex}%)`
+  sleevesDOM.style.transform = `translate(${-100 * slideIndex}%)`
 }
 
 
 // 
 // 
 function parseData(x){
-  return `<div class="review">
+  return `<div class="sleeves">
   <a href="${x.spotifyUrl}">
-    <div class="review-inner">
+    <div class="sleeve-inner">
       <img src="${x.artwork}" alt="${x.title}" />
       <div class="meta">
         <p class="title">${x.title}</p>
@@ -60,7 +60,7 @@ async function getData(){
   })
   .then(data => {
     reviewsData = data
-    reviewsDOM.innerHTML = reviewsData.map(parseData).join("")
+    sleevesDOM.innerHTML = reviewsData.map(parseData).join("")
   })
   .catch(error => {
     console.error("There has been a problem with your fetch operation: ", error)
