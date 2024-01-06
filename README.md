@@ -5,6 +5,8 @@
     - Inline Slider
     - Fetches remote static API data
 
-![PREVIEW](preview.png)
-
 [LIVE SITE](https://mattheweq.com/inline-slider/)
+
+[API](https://mvmapi.olk1.com/albums)
+
+![PREVIEW](preview.png)
